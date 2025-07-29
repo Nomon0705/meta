@@ -1,3 +1,4 @@
+#how to use the igt hub in any situation
 version: 2
 updates:
   - package-ecosystem: "github-actions"
