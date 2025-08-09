@@ -1,5 +1,4 @@
-
-name: semgrep
+name: Semgrep Scan
 
 on:
   workflow_call:
@@ -13,11 +12,14 @@ jobs:
     container:
       image: returntocorp/semgrep
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Semgrep rules
+        uses: actions/checkout@v4
         with:
           repository: dgryski/semgrep-go
           path: rules
-      - name: semgrep
+
+      - name: Run Semgrep scan
         run: semgrep scan --error --enable-nosem -f ./rules .
-#this is the semgrep.yml for getting the view of the project
