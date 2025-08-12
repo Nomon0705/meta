@@ -13,10 +13,10 @@ jobs:
       image: returntocorp/semgrep
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout Semgrep rules
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: dgryski/semgrep-go
           path: rules
